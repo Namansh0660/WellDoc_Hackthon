@@ -116,3 +116,170 @@ When using **Batch Predictions**, upload a CSV like this:
 MIT Licernse
 
 This project is licensed under the MIT License.
+
+
+
+
+
+🩺 Diabetes Risk Prediction Engine
+
+This repository contains a Streamlit-based interactive dashboard for predicting diabetes readmission risks using machine learning models. The system simulates a hospital risk assessment tool, allowing healthcare professionals and researchers to:
+
+Assess individual patient risk.
+
+Compare model performances.
+
+Explore data insights.
+
+Perform batch predictions for multiple patients.
+
+⚠️ Disclaimer: The dataset used here is synthetic (generated within the app) and is intended for demonstration only. This project is not for actual clinical use without proper validation on real-world medical datasets.
+
+🚀 Features
+
+Patient Risk Assessment
+
+Input patient demographics, hospitalization details, and diabetes management factors.
+
+Predict 90-day readmission risk with probability, category (Low/Medium/High), and clinical recommendations.
+
+Visualize risk probability with a gauge chart.
+
+Model Performance
+
+Compare multiple machine learning models:
+
+Random Forest
+
+Gradient Boosting
+
+XGBoost
+
+Evaluate metrics like AUROC and Average Precision.
+
+Visualize ROC curves and feature importance.
+
+Data Insights
+
+Explore dataset statistics, distributions, and correlations.
+
+Risk factor analysis (A1C, hospital stay, etc.).
+
+Interactive plots with Plotly.
+
+Batch Predictions
+
+Upload a CSV file with patient data.
+
+Generate risk predictions for multiple patients simultaneously.
+
+Download results as CSV for further use.
+
+📂 Repository Structure
+├── app.py                   # Streamlit dashboard  
+├── WellDoc_Hackathon.ipynb  # Jupyter notebook (model experiments & development)  
+├── requirements.txt         # Python dependencies  
+└── README.md                # Project documentation (this file)  
+
+⚙️ Installation & Setup
+
+Clone the repository
+
+git clone https://github.com/your-username/diabetes-risk-dashboard.git
+cd diabetes-risk-dashboard
+
+
+Create a virtual environment (recommended)
+
+python -m venv venv
+source venv/bin/activate   # On Mac/Linux
+venv\Scripts\activate      # On Windows
+
+
+Install dependencies
+
+pip install -r requirements.txt
+
+
+Run the Streamlit app
+
+streamlit run app.py
+
+
+Open your browser at http://localhost:8501
+.
+
+🖥️ Usage Guide
+1. Patient Risk Assessment
+
+Navigate to Patient Risk Assessment.
+
+Enter patient details (age group, gender, race, hospital days, medications, etc.).
+
+Click Calculate Risk.
+
+View:
+
+Risk probability & category
+
+Gauge chart visualization
+
+Clinical recommendations
+
+2. Model Performance
+
+Compare Random Forest, Gradient Boosting, and XGBoost.
+
+Metrics shown: AUROC, Average Precision.
+
+Visualizations:
+
+ROC curve comparison
+
+Feature importance (top 15 features)
+
+3. Data Insights
+
+Dataset statistics: total patients, high-risk rate, avg. hospital stay, etc.
+
+Interactive plots:
+
+A1C vs Readmission rate
+
+Hospital stay distribution by risk
+
+Correlation heatmap
+
+4. Batch Predictions
+
+Upload a CSV file with patient records.
+
+Example format:
+
+patient_id,age_group,hospital_days,emergency_visits,a1c_result
+P001,6,5,0,Norm
+P002,4,3,1,>7
+P003,7,12,2,>8
+
+
+Generate predictions → download results as CSV.
+
+View summary stats (counts of High/Medium/Low risk patients).
+
+📊 Models Used
+
+Random Forest
+
+Gradient Boosting
+
+XGBoost
+
+Models are trained on synthetic patient data generated within the app.
+
+📝 Notes
+
+Built with: Streamlit, scikit-learn, XGBoost, Plotly, Pandas, NumPy.
+
+The notebook (WellDoc_Hackathon.ipynb) contains model experimentation and preprocessing pipelines.
+
+Current implementation uses synthetic data → should be retrained with real patient datasets for deployment in healthcare.
